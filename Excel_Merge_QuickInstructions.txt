@@ -1,0 +1,17 @@
+# How to Create the Ready-Made Excel Audit Workbook
+
+The sample files generated for audit are now in the outputs folder:
+  - montecarlo_summary_SAMPLE.csv
+  - scenario_1_SAMPLE.csv
+
+## Steps:
+1. Open Excel > File > Open and select `montecarlo_summary_SAMPLE.csv` as a new worksheet.
+2. Repeat for `scenario_1_SAMPLE.csv` creating a second worksheet.
+3. Rename the sheets “Summary” and “Scenario1”.
+4. Apply Excel conditional formatting:
+   - Red for DSCR_min < 1.3 on Summary column H
+   - Blue for Equity_IRR < 6.5 on column G
+   - Yellow for OpCF_Y1 < 0 on column I
+5. Save the workbook as `Audit_Template.xlsx`.
+
+This provides instant visualization and filtering for investment risk and outputs. See also the included Excel_Audit_Guide.txt for additional analysis routines!

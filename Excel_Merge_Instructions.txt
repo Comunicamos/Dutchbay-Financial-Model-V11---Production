@@ -1,0 +1,40 @@
+# Dutch Bay Financial Model - Excel Merging Instructions
+
+## How to Prepare the Excel Audit Workbook from Output CSVs
+
+### 1. Open Excel and Create a New Workbook
+
+### 2. Import the Monte Carlo Summary
+- Go to the `Data` tab in Excel, click `From Text/CSV`.
+- Browse to `Desktop/DutchBay_FinModel_Package/outputs/montecarlo_summary_SAMPLE.csv` and import into a new sheet.
+- Rename this sheet to `Summary`.
+
+### 3. Import the Detailed Scenario Output
+- Again, `From Text/CSV`.
+- Browse to `Desktop/DutchBay_FinModel_Package/outputs/scenario_1_SAMPLE.csv` and import to a new sheet.
+- Rename this sheet to `Scenario1`.
+
+### 4. Apply Conditional Formatting on the Summary Sheet
+- Select the `DSCR_min` column: Home > Conditional Formatting > New Rule
+    - Rule: Format cells less than 1.30 (red fill)
+- Select the `OpCF_Y1` column: Home > Conditional Formatting > New Rule
+    - Rule: Format cells less than 0 (yellow fill)
+- Select the `Equity_IRR` column: Home > Conditional Formatting > New Rule
+    - Rule: Format cells less than 6.5 (light blue fill)
+
+### 5. Enable Filters and Pivot Tables for Deeper Audit
+- Use Excel’s filter feature to quickly identify scenarios that fail any threshold.
+- Use pivot tables or charts for scenario ranking or visual summary.
+
+### 6. Save As `Audit_Template.xlsx` for re-use or distribution.
+
+---
+
+## What to Check in Your Audit
+- Any scenario with `DSCR_min < 1.30` (red) is high-risk: not bankable, review causes.
+- Negative values in `OpCF_Y1` (yellow) signal stress/unviable conditions.
+- Low `Equity_IRR` (light blue) may fall short of sponsor requirements.
+- On the `Scenario1` sheet, ensure all values look reasonable—no NaN, infinity, or negative where not expected.
+- If you add your own scenarios, repeat for each new CSV.
+
+More details and advanced analysis can be found in the included `Excel_Audit_Guide.txt` file.
